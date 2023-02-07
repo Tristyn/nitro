@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.root.json",
+  "references": [
+    {
+      "path": "./packages/library/tsconfig.all.json"
+    },
+    {
+      "path": "./packages/app/tsconfig.all.json"
+    },
+    {
+      "path": "./packages/cli-client/tsconfig.all.json"
+    },
+    {
+      "path": "./packages/draw-crank/tsconfig.all.json"
+    },
+    {
+      "path": "./packages/tests/tsconfig.all.json"
+    }
+  ]
+}

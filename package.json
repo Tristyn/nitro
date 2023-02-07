@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "scripts": {
+    "nuke": "shx rm -rf packages/*/*/node_modules node_modules pnpm-lock.yaml || true",
+    "reinstall": "pnpm run nuke && pnpm install",
+    "clean": "pnpm --recursive --workspace-concurrency=0 run clean",
+    "build": "./build.sh && pnpm run build:ts && pnpm run build:package",
+    "build:ts": "tsc --build --verbose tsconfig.all.json",
+    "build:package": "pnpm --recursive --workspace-concurrency=0 run package",
+    "build:clean": "pnpm run clean && pnpm run build",
+    "watch": "tsc --build --verbose --watch tsconfig.all.json",
+    "dev": "yarn --cwd packages/app dev",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "dependencies": {
+    "@project-serum/anchor": "^0.26.0"
+  },
+  "devDependencies": {
+    "ts-mocha": "^10.0.0"
+  }
+}

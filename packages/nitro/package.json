@@ -1,0 +1,38 @@
+{
+  "name": "nitro",
+  "version": "1.0.0",
+  "description": "Library for Nitro state channels",
+  "repository": "https://github.com/tristyn/",
+  "author": "Tristyn Stimpson",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib",
+    "src",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/types/index.d.ts",
+  "exports": {
+    "require": "./lib/cjs/index.js",
+    "import": "./lib/esm/index.js",
+    "types": "./lib/types/index.d.ts"
+  },
+  "scripts": {
+    "clean": "shx mkdir -p lib && shx rm -rf lib",
+    "package": "shx mkdir -p lib/cjs && shx echo '{ \"type\": \"commonjs\" }' > lib/cjs/package.json"
+  },
+  "dependencies": {
+    "@project-serum/anchor": "^0.26.0",
+    "@solana/spl-token": "0.3.7",
+    "@solana/web3.js": "^1.69.0"
+  }
+}
