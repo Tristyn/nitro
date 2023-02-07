@@ -1,8 +1,0 @@
-{
-  "extends": "./tsconfig.all.json",
-  "include": ["./packages/*/src"],
-  "compilerOptions": {
-    "noEmit": true,
-    "jsx": "react"
-  }
-}

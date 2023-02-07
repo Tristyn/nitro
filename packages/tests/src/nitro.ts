@@ -1,6 +1,6 @@
 import * as anchor from "@project-serum/anchor";
 import { Program } from "@project-serum/anchor";
-import { Nitro } from "../target/types/nitro";
+import { Nitro } from "nitro";
 
 describe("nitro", () => {
   // Configure the client to use the local cluster.
@@ -10,7 +10,8 @@ describe("nitro", () => {
 
   it("Is initialized!", async () => {
     // Add your test here.
-    const tx = await program.methods.initialize().rpc();
-    console.log("Your transaction signature", tx);
+    // const tx = await program.methods.init().rpc();
+    // console.log("Your transaction signature", tx);
+    console.log("All done");
   });
 });

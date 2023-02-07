@@ -1,11 +1,9 @@
 {
-            "compilerOptions": {
-              "types": ["mocha", "chai"],
-              "typeRoots": ["./node_modules/@types"],
-              "lib": ["es2015"],
-              "module": "commonjs",
-              "target": "es6",
-              "esModuleInterop": true
-            }
-          }
-          
+  "extends": "./tsconfig.all.json",
+  "include": ["./packages/*/src", "./packages/*/package.json"],
+  "compilerOptions": {
+    "noEmit": true,
+    "skipLibCheck": true,
+    "jsx": "react"
+  }
+}

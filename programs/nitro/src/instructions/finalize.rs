@@ -5,7 +5,7 @@ pub struct FinalizeChannel<'info> {
     /// The channel containing the users and balance sheet
     #[account(mut,
       has_one = channel,
-  )]
+    )]
     pub channel: AccountLoader<'info, Channel>,
 
     pub signer: Signer<'info>,
