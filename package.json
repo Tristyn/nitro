@@ -4,12 +4,13 @@
     "nuke": "shx rm -rf packages/*/node_modules node_modules pnpm-lock.yaml || true",
     "reinstall": "pnpm run nuke && pnpm install && pnpm run build:clean",
     "clean": "pnpm --recursive --workspace-concurrency=0 run clean",
-    "build": "turbo run build",
+    "build": "turbo run build && pnpm run build:package",
     "build:clean": "pnpm run clean && pnpm run build",
+    "build:package": "pnpm --recursive --workspace-concurrency=0 run package",
+    "watch": "tsc --build --verbose --watch",
     "lint": "turbo run lint",
     "test": "turbo run test",
-    "watch": "tsc --build --verbose --watch tsconfig.all.json",
-    "dev": "yarn --cwd packages/app dev",
+    "dev": "pnpm -r run dev",
     "preinstall": "npx only-allow pnpm"
   },
   "devDependencies": {

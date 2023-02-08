@@ -5,9 +5,11 @@
   "scripts": {
     "build": "tsc --build --verbose && next build",
     "clean": "shx rm -rf .next .swc lib",
-    "dev": "NODE_OPTIONS='--inspect' next dev",
-    "start": "next start",
-    "lint": "prettier --check 'src/{*,**/*}.{ts,tsx,js,jsx,json}' && eslint && next lint"
+    "dev": "NODE_OPTIONS='--inspect' dotenv -e .env next dev",
+    "start": "dotenv -e .env next start",
+    "lint": "prettier --check 'src/{*,**/*}.{ts,tsx,js,jsx,json}' && eslint && next lint",
+    "package": "shx mkdir -p lib/cjs && shx echo '{ \"type\": \"commonjs\" }' > lib/cjs/package.json",
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
     "@next/font": "13.1.6",
@@ -23,6 +25,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
+    "dotenv": "^16.0.3",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.4"
   }
